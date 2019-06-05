@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../static/bootstrap-3.3.7-dist/css/bootstrap.css" />
+		<script src="../node_modules/vue/dist/vue.js"></script>
+		<script src="../node_modules/vue-resource/dist/vue-resource.js"></script>
+	</head>
+	<body>
+		<div id="app" class="container">
+			<h1>Vue-resource插件讲解</h1>
+			<a href="javascript:;" class="btn btn-primary" @click="get">Get请求</a>
+			<a href="javascript:;" class="btn btn-primary" @click="post">Post请求</a>
+			<a href="javascript:;" class="btn btn-primary" @click="jsonp">Jsonp请求</a>
+			<a href="javascript:;" class="btn btn-primary" @click="http">另一种方法请求</a>
+			<div>
+				<span>{{msg}}</span>
+			</div>
+		</div>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					msg: ''
+				},
+				mounted:function(){
+					//全局拦截器
+					Vue.http.interceptors.push(function(request,next){
+						console.log('request init.');
+						next(function(response){
+							console.log('response init.');
+							return response;
+						})
+					})
+				},
+				http:{
+					root:'http://192.168.0.117:8020/demo6/'
+				},
+				methods:{
+					get(){
+						this.$http.get("package.json",{
+							params:{
+								userId:'123'
+							},
+							headers:{
+								token:'abcd'
+							}
+						}).then(res=>{
+							this.msg = res.data;
+						},error=>{
+							this.msg = error;
+						});
+					},
+					post(){
+						this.$http.post("package.json",{
+							userId:'102'
+						},{
+							headers:{
+								access_token:'abcd'
+							}
+						}).then(res=>{
+							this.msg = res.data;
+						});
+					},
+					jsonp(){
+						this.$http.jsonp('package.json',{
+							
+						}).then(res=>{
+							this.msg = res.data;
+						})
+					},
+					http:function(){
+						this.$http({
+							url:'package.json',
+							params:{
+								userId:'333'
+							},
+							headers:{//表头
+								token:'333222'
+							},
+							timeout:5,//超时控制
+							before:function(){
+								console.log('before')
+							}
+						}).then(res=>{
+							this.msg = res.data;
+						})
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
+ 

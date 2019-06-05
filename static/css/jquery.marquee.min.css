@@ -1,0 +1,36 @@
+ul.marquee {
+	/*display: block;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	line-height: 1;
+	position: relative;
+	overflow: hidden;
+	
+	height: 22px;
+	background-color: #f2f2ff;
+	border: 1px solid #08084d;*/
+
+    position: relative;
+    height: 43px;
+    width: 1200px;
+    line-height: 43px;
+}
+
+ul.marquee li {
+	position: absolute;
+	padding: 0px 15px;
+	top: -999em;
+	left: 0;
+	display: block;
+	white-space: nowrap;
+}
+/*.modify_nav{
+	top: 45px;
+}
+.modify_btn{
+	top: 45px;
+}
+.modify_btn button{
+	top: 55px;
+}*/
