@@ -95,6 +95,7 @@
 <script>
 	import validate from '../../static/js/validate/jquery.validate.min.js'
 	import messages_zh from '../../static/js/validate/messages_zh.min.js'
+	import methodyz from '../../static/js/validate/method.js'
 	import "../../static/css/register.css";
 	export default {
 		data() {
@@ -159,23 +160,6 @@
 		}
 	}
 
-	jQuery.validator.addMethod("isPhone", function(value, element) {
-		var length = value.length;
-		var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
-		return this.optional(element) || (length == 11 && mobile.test(value));
-	}, "请填写正确的手机号码"); //可以自定义手机号验证
-	jQuery.validator.addMethod("isCheckEmail", function(value, element) {
-      var length = value.length;
-      var email = /^([a-z0-9A-Z]+[-|_|\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\.)+[a-zA-Z]{2,}$/;
-      return this.optional(element) || (length > 0 && length <30 && email.test(value));
-    }, "请填写正确的邮箱");//可以自定义邮箱验证
-	
-	jQuery.validator.addMethod("passwordtext", function(value, element) {
-		var length = value.length;
-		var passwordbag = /(([0-9]+[a-zA-Z]+[0-9]*)|([a-zA-Z]+[0-9]+[a-zA-Z]*))/;
-		return this.optional(element) || (length > 8 && length <16 && passwordbag.test(value));
-	}, "密码长度8-16字符之间，必须字母与数字混合"); //可以自定义手机号验证
-	
 	function phoneRegisterForm(id) {
 		$(id).validate({
 			rules: {
@@ -212,9 +196,20 @@
 			messages: {
 				phone_phone: {
 					isPhone: "请填写正确的手机号码",
-					remote: "该手机号已被注册使用",
-					　　
+					remote: "该手机号已被注册使用",	　　
 				},
+				password_phone: {
+                   rangelength:"密码长度应该在8-16个字符",
+                   remote: "密码必须字母、数字混合组成",
+            　　			},
+                password_phone_confirm: {
+                   rangelength:"确认密码长度应该在6~16个字符",
+                   equalTo: "两次密码输入不一致"
+            　　			},
+                email_phone:{
+                   isCheckEmail:"请输入正确的电子邮件",
+                   remote: "该邮箱已被注册使用",
+                }
 			},
 			errorElement: "em",
 			errorPlacement: function(error, element) { //指定错误信息位置
