@@ -6,6 +6,7 @@ import Title from '@/html/title'
 import Image from '@/html/image'
 import Login from '@/getinto/login'
 import Register from '@/getinto/register'
+import ToForgetPassword from '@/getinto/toForgetPassword'
 
 Vue.use(Router)
 
@@ -20,6 +21,11 @@ export default new Router({
 			path: '/register',
 	      	name: 'Register',
 	      	component:Register
+		},
+		{
+			path: '/toForgetPassword',
+		  	name: 'toForgetPassword',
+		  	component:ToForgetPassword
 		},
 	    {
 	    	path: '/',

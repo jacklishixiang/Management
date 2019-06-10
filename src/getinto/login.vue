@@ -26,7 +26,7 @@
                        </div>   
 	                </div>
 	                <button @click="phoneLoginForm" class="btn btn-primary block full-width m-b">登 录</button>
-	                <p class="text-muted text-center method"> <a href="#"><small>忘记密码了？</small></a> | <a @click="register">没有帐号？马上注册</a></p>
+	                <p class="text-muted text-center method"> <a @click="toForgetPassword"><small>忘记密码了？</small></a> | <a @click="register">没有帐号？马上注册</a></p>
 	
 	            </form>
 	        </div>
@@ -50,6 +50,9 @@ export default{
     	register(){
     		this.$router.push('/register');
     	},
+		toForgetPassword(){
+			this.$router.push('/toForgetPassword');
+		},
     	phoneLoginForm(){
     		phoneLoginForm('#phoneLoginForm');
     	}

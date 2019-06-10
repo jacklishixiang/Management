@@ -3,7 +3,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top modify_nav" id="sidebar-wrapper" role="navigation">
         <ul class="nav sidebar-nav">
             <li class="sidebar-brand">
-                <a>智能小秘书</a>
+                <a>巡回大律师平台</a>
             </li>
             <!--<li @click="onClickTabBarItem(0)" v-bind:class="{activeLi: actives[0]}">
                 <router-link to="/" replace><i class="fa fa-home" style="padding-right: 10px;"></i>首页</router-link>

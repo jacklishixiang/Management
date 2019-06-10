@@ -5,7 +5,8 @@
 /*-------------------------------*/
 body{
   position: relative;
-  overflow-x: hidden;
+	min-width: 1000px;
+  overflow-x: auto;
 }
 .fixed{
 	position: fixed;
@@ -321,7 +322,7 @@ body a:hover {
 .btn_cl{
 	width: 100%;
 	position: fixed;
-	height: 50px;
+	height: 65px;
 	z-index: 99;
 	background: #222222;
 	border-color: #080808;
@@ -724,12 +725,12 @@ body a:hover {
 
 
 @media (max-width:1030px){
-	#sidebar-wrapper{
+	/* #sidebar-wrapper{
 		width: 0px;
 	}
 	#wrapper.toggled_one{
 		padding-left: 0px;
-	}
+	} */
 	.btn_cl{
 		border-left: transparent;
 	}

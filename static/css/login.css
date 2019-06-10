@@ -124,6 +124,11 @@
     width: 100%;
     margin-bottom: 0px;
 }
+#toForgerPassword .form-group{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0px;
+}
 .better_lable{
     padding: 10px 0px;
     margin: 0;

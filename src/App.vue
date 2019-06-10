@@ -1,12 +1,12 @@
 <template>
-  <div v-if="path !='/login'&& path !='/register'" id="wrapper" class="toggled_one" style="height: calc(100% - 10px); padding-top: 60px;">
+  <div v-if="path !='/login'&& path !='/register'&& path !='/toForgetPassword'" id="wrapper" class="toggled_one" style="height: calc(100% - 10px); padding-top: 60px;">
 		<div class="overlay" data-toggle="offcanvas"></div>
 		<div id="app">
 			<Top></Top>
 	    <Left :href="href" v-on:clickback="clickback"></Left>
 	  </div>
 	</div>
-	<div v-else-if="path ==='/login' || path ==='/register'">
+	<div v-else-if="path ==='/login' || path ==='/register' || path ==='/toForgetPassword'">
 		<router-view/>
 	</div>
 </template>
