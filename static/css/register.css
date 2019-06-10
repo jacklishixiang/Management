@@ -149,6 +149,11 @@
     width: 100%;
     margin-bottom: 0px;
 }
+#laywerRegisterForm .form-group{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0px;
+}
 .better_lable{
     padding: 10px 0px;
     margin: 0;
@@ -189,4 +194,19 @@
 .info{
 	float: left;
 	line-height: 50px;
+}
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+	width: 100% !important;
+}
+
+.btnlaywer{
+	border: 1px solid #e5e6e7;
+	color: #555555a1;
+	border-radius: 0;
+}
+.btnfontcolor{
+	color: #333;
+}
+.btnerror{
+	border: 1px dotted #cc5965;
 }
