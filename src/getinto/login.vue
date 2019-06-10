@@ -15,15 +15,16 @@
 	                    <input type="password" class="form-control" name="passwordname" placeholder="密码" v-model="password">
 	                	<label class="better_lable"></label>
 	                </div>
-	                <!--<div class="form-group">
-	                	<div class="layui-form-item">
+	                <div class="form-group industry_type">
+	                	<div class="layui-form-item" style="margin-bottom: 0;">
                             <select class="form-control fl" name="user_type"  lay-verify="required" lay-filter="agentList">
                                 <option value="1">律师</option>
                                 <option value="2">客户</option>
                                 <option value="3">管理员</option>
                             </select>
-                       </div>
-	                </div>-->
+							<label class="better_lable"></label>
+                       </div>   
+	                </div>
 	                <button @click="phoneLoginForm" class="btn btn-primary block full-width m-b">登 录</button>
 	                <p class="text-muted text-center method"> <a href="#"><small>忘记密码了？</small></a> | <a @click="register">没有帐号？马上注册</a></p>
 	
