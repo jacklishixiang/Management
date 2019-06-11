@@ -322,7 +322,7 @@ body a:hover {
 .btn_cl{
 	width: 100%;
 	position: fixed;
-	height: 65px;
+	height: 55px;
 	z-index: 99;
 	background: #222222;
 	border-color: #080808;

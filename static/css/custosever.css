@@ -1,0 +1,22 @@
+.telephone{
+	position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #13c9cb;
+    cursor: pointer;
+    z-index: 999;
+    border-radius: 50%;
+    box-shadow: rgba(15,66,76,.25) 0 0 14px 0;
+}
+.telephone a{
+	display: inline-block;
+}
+.telephone .img_duilog{
+	width: 100%;
+    padding: 10px;
+}
+.telephone .img_duilog img {
+    width: 100%;
+}
